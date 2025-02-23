@@ -1,16 +1,13 @@
-# Detailed Summary of the Code
+# Summary
 
-This project is a **physics-based simulation** of a game architecture that dynamically loads its structure from a JSON file and visualizes interactions between various subsystems using Pygame. Below is a detailed breakdown of the code's organization and functionality.
+This project renders a system functional architecture defined in a json file.
+
+We are using a **time-step simulation** to move the subsystems.
 
 ---
 
-## Overall Architecture
-
-- **Purpose:**  
-  The simulation models a top-level "Game" system that contains multiple subsystems (e.g., "Physics Engine", "Rendering Engine", etc.). These systems interact through defined relationships (e.g., "provides", "modifies", "synchronizes") and are subject to various forces—such as repulsive, attractive, and boundary collision forces—that influence their positions on the screen.
-
-- **Data Source:**  
-  The entire hierarchy—including system names, sizes, positions, and interactions—is defined in an external JSON file (`architecture.json`). This file is loaded at runtime, enabling dynamic configuration without modifying the code.
+- **Example:**  
+  A "Game" system with its subsystems (e.g., "Physics Engine", "Rendering Engine", etc.). These systems interact through defined relationships (e.g., "provides", "modifies", "synchronizes").
 
 ---
 
@@ -20,7 +17,7 @@ This project is a **physics-based simulation** of a game architecture that dynam
 
 - **Utility Functions:**
   - **`get_edge_point(rect, center, direction)`**  
-    Computes the intersection point on the edge of a rectangle in a specified direction from its center. This is used for drawing arrows so that they start or end precisely at the boundary of a system’s visual representation.
+    Computes the intersection point on the edge of a rectangle in a specified direction from its center.
     
   - **`draw_arrow(screen, start, end, text, font, color)`**  
     Draws an arrow between two points with a label placed at the midpoint. The arrowhead is created using a small polygon based on the line's angle.
@@ -38,8 +35,8 @@ This project is a **physics-based simulation** of a game architecture that dynam
       Includes mass, velocity, acceleration, and net force for simulating movement.
     - **Hierarchy:**  
       Contains lists of child subsystems and interaction definitions.
-    - **Optional Boundaries:**  
-      Outer and inner boundary circles that influence system movement.
+    - **Boundaries:**  
+      Outer and inner boundary circles.
   
 - **Key Methods:**
   - **`add_subsystem()` / `add_interaction()`:**  
@@ -49,7 +46,7 @@ This project is a **physics-based simulation** of a game architecture that dynam
     Positions direct subsystems evenly around a circle (centered at the parent system’s center) with a specified radius. This method also recursively applies a smaller circle layout to any child subsystems.
   
   - **`get_bounding_box()`:**  
-    Recursively calculates the overall bounding box of a system and its descendants. This is used to dynamically adjust the canvas size so all content is visible.
+    Recursively calculates the overall bounding box of a system and its descendants. This is used to adjust the canvas size so all content is visible.
   
   - **`shift(dx, dy)`:**  
     Shifts the system (and all its child systems) by a given offset. This is used after computing the bounding box to ensure a margin around the displayed content.
@@ -118,10 +115,4 @@ This project is a **physics-based simulation** of a game architecture that dynam
      The updated positions are rendered on the screen, showing the systems, their boundaries, and interaction arrows.
    - The simulation continues until the user quits.
 
----
 
-## Conclusion
-
-This project demonstrates how to simulate a complex hierarchical architecture with dynamic physics interactions, loaded dynamically from an external JSON file and visualized using Pygame. The code is modularized into separate files (`utils.py`, `system.py`, and `main.py`), which makes it easy to extend and customize both the simulation parameters and the visual layout.
-
-It serves as an educational example of integrating configuration management, recursive data structures, physics simulation, and real-time rendering in Python.
