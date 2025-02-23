@@ -15,7 +15,7 @@ We are using a **time-step simulation** to move the subsystems.
 
 ### `utils.py`
 
-- **Utility Functions:**
+- **Functions:**
   - **`get_edge_point(rect, center, direction)`**  
     Computes the intersection point on the edge of a rectangle in a specified direction from its center.
     
@@ -38,7 +38,7 @@ We are using a **time-step simulation** to move the subsystems.
     - **Boundaries:**  
       Outer and inner boundary circles.
   
-- **Key Methods:**
+- **Methods:**
   - **`add_subsystem()` / `add_interaction()`:**  
     Build the hierarchical structure and define relationships between systems.
   
@@ -66,7 +66,6 @@ We are using a **time-step simulation** to move the subsystems.
   - **`draw(screen, font)`:**  
     Draws the system as a rectangle with its name centered. If boundary circles are defined, they are drawn as well. It then recursively calls `draw()` on its subsystems and uses utility functions to render arrows for each defined interaction.
 
-- **Helper Function:**  
   - **`load_system_from_dict(data)`**  
     Recursively creates a `System` object (and its hierarchy) from a dictionary loaded from JSON.
 
