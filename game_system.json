@@ -1,0 +1,57 @@
+{
+    "name": "Game",
+    "size": [720, 720],
+    "position": [400, 300],
+    "outer_boundary_radius": 3500,
+    "inner_boundary_radius": 0,
+    "subsystems": [
+      {
+        "name": "Physics Engine",
+        "size": [140, 50]
+      },
+      {
+        "name": "Rendering Engine",
+        "size": [140, 50]
+      },
+      {
+        "name": "Input Management",
+        "size": [140, 50]
+      },
+      {
+        "name": "Scripting System",
+        "size": [140, 50]
+      },
+      {
+        "name": "Asset Management",
+        "size": [140, 50]
+      },
+      {
+        "name": "Object Construction",
+        "size": [140, 50]
+      },
+      {
+        "name": "Save/Load System",
+        "size": [140, 50]
+      },
+      {
+        "name": "Multiplayer",
+        "size": [140, 50]
+      },
+      {
+        "name": "UI & UX",
+        "size": [140, 50]
+      }
+    ],
+    "interactions": [
+      ["Physics Engine", "Rendering Engine", "provides", "movement & collision data"],
+      ["Input Management", "Object Construction", "modifies", "object placement"],
+      ["Scripting System", "Physics Engine", "modifies", "physics parameters"],
+      ["Scripting System", "Multiplayer", "synchronizes", "logic events"],
+      ["Asset Management", "Rendering Engine", "supplies", "models & textures"],
+      ["Save/Load System", "Object Construction", "saves/loads", "object data"],
+      ["UI & UX", "Physics Engine", "displays", "interface info"],
+      ["UI & UX", "Rendering Engine", "displays", "interface info"],
+      ["UI & UX", "Input Management", "displays", "interface info"]
+    ]
+  }
+  
