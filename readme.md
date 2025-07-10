@@ -1,4 +1,4 @@
-Used as reference for another project.
+Used as reference (proof of concept idea) for another project.
 This was written with guidance of ChatGPT.
 # Summary
 
