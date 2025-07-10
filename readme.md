@@ -1,3 +1,5 @@
+Used as reference for another project.
+This was written with guidance of ChatGPT.
 # Summary
 
 This project renders a system architecture defined in a json file.
