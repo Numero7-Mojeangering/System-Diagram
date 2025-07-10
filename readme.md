@@ -1,6 +1,6 @@
 # Summary
 
-This project renders a system functional architecture defined in a json file.
+This project renders a system architecture defined in a json file.
 
 We are using a **time-step simulation** to move the subsystems.
 
