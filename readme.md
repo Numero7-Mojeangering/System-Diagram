@@ -8,9 +8,9 @@ We are using a **time-step simulation** to move the subsystems.
 
 ---
 
-**Example:**  
+**Example given by AI:**  
   A "Game" system with its subsystems (e.g., "Physics Engine", "Rendering Engine", etc.). These systems interact through defined relationships (e.g., "provides", "modifies", "synchronizes").
-Entirely given by AI.
+
 ---
 
 ## File Breakdown
